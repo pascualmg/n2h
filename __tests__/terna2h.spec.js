@@ -19,7 +19,7 @@ test('del 0 al 99 va bien', function () {
     for (let i = 0;i<=99;i++){
         expect(terna2h(i)).toBe(tupla2h(i));
     }
-}
+});
 
 //Este array viene directo de la wikipedia , así que lo podemos dar como cierto.
 function tupla2h(i) {
