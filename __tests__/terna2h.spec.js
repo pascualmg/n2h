@@ -3,7 +3,6 @@
  745 = "setecientos cuarenta y cinco"
  27 = "Veintisiete"
  del 16 al 19 , lo hace bien.
- Si el primer dígito es un 1 , entonces no tengo que decir "uno mil"
 
 */
 
