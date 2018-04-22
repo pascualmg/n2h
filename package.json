@@ -1,0 +1,25 @@
+{
+  "name": "n2h",
+  "version": "1.0.0",
+  "description": "",
+  "main": "n2h.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pascualmg/n2h.git"
+  },
+  "keywords": [
+    "transform",
+    "number",
+    "word",
+    "human"
+  ],
+  "author": "Andrés Perez Cerón",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pascualmg/n2h/issues"
+  },
+  "homepage": "https://github.com/pascualmg/n2h#readme"
+}
