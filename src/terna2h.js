@@ -7,8 +7,11 @@
 function terna2h(terna) {
     let HumanString = "";
 
-    const pesoIndex = Number(terna.toString().substring(0,1));
-    const tuplaIndex = Number(terna.toString().substring(1,3));
+    if (isTupla(terna)){
+        return tupla2h(Number(terna));
+    }
+    const pesoIndex = Number(terna.substring(0,1));
+    const tuplaIndex = Number(terna.substring(1,3));
 
     const HumanCentenas = pesoCentenas(pesoIndex);
     const HumanTupla = tupla2h(tuplaIndex);
@@ -18,10 +21,13 @@ function terna2h(terna) {
     }
 
     if (pesoIndex >= 1) {
-        HumanString = HumanCentenas + HumanTupla;
+        HumanString = HumanCentenas + ' ' + HumanTupla;
     }
 
     return HumanString;
+}
+function isTupla(terna){
+    return terna.length < 3;
 }
 function tupla2h(index) {
     const tuplasRaw = [
@@ -57,7 +63,6 @@ function tupla2h(index) {
         "veintinueve",
         "treinta",
         "treinta y uno",
-        "treinta y una",//	Delante de un sustantivo: «treinta y un» o «treinta y una».
         "treinta y dos",
         "treinta y tres",
         "treinta y cuatro",
@@ -130,6 +135,7 @@ function tupla2h(index) {
     return tuplasRaw[index]
 }
 function pesoCentenas(index){
+    let centenas = "";
    const pesoCentenas = [
        "",//0
        "ciento",
@@ -142,6 +148,7 @@ function pesoCentenas(index){
        "ochocientos",
        "novecientos"
    ];
-   return pesoCentenas[index];
+   centenas =  pesoCentenas[index];
+   return centenas;
 }
 module.exports = terna2h;

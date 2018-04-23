@@ -9,15 +9,18 @@
 const terna2h = require('../src/terna2h');
 
 test('si le meto 745', function () {
-   expect(terna2h(745)).toBe('setecientos cuarenta y cinco');
+   expect(terna2h('745')).toBe('setecientos cuarenta y cinco');
+});
+test('si le meto 456', function () {
+    expect(terna2h('456')).toBe('cuatrocientos cincuenta y seis');
 });
 test('si le meto 27', function () {
-    expect(terna2h(27)).toBe('veintisiete');
+    expect(terna2h('27')).toBe('veintisiete');
 });
 
 test('del 0 al 99 va bien', function () {
     for (let i = 0;i<=99;i++){
-        expect(terna2h(i)).toBe(tupla2h(i));
+        expect(terna2h(i.toString())).toBe(tupla2h(i));
     }
 });
 
@@ -56,7 +59,6 @@ function tupla2h(i) {
         "veintinueve",
         "treinta",
         "treinta y uno",
-        "treinta y una",//	Delante de un sustantivo: «treinta y un» o «treinta y una».
         "treinta y dos",
         "treinta y tres",
         "treinta y cuatro",
