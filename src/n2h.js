@@ -27,7 +27,7 @@ function blockWeightTranslator(peso) {
  * Traduce un block a lenguaje humano .
  * un block , es una string que contiene caracteres numéricos únicamente.//todo:asserts y test.
  * un block , es una string que tiene un tamaño fijo de 6 caracteres.
- *
+ * vg->[000101] es un block que se compone de 2 ternas [{terna2}{terna1}]
  * @param block
  * @returns {string}
  */
@@ -51,9 +51,12 @@ function block2h(block) {
 
     terna1 = block.slice(-3);
     terna2 = block.slice(0, 3);
+
+    if (terna2 !== '000'){
+        translatedTerna2 = terna2h(terna2);
+    }
     translatedTerna1 = terna2h(terna1);
-    translatedTerna2 = terna2h(terna2);
-    return translatedTerna2 + ' mil ' + translatedTerna1;
+    return ((translatedTerna2 !== "")?translatedTerna2 + ' mil ':translatedTerna2) + translatedTerna1;
 }
 
 function isLastBlock(numberStr, long) {

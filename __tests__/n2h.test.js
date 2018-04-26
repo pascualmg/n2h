@@ -4,7 +4,7 @@
 const n2h = require('../src/n2h');
 
 test('si le meto enorme como el 31415926535897932384626433832795 lo hace bien', function () {
-    expect(n2h('31415926535897932384626433832795')).toBe('treinta y un quintillones ' +
+    expect(n2h('31415926535897932384626433832795')).toEqual('treinta y un quintillones ' +
         'cuatrocientos quince mil novecientos veintiséis cuatrillones ' +
         'quinientos treinta y cinco mil ochocientos noventa y siete trillones ' +
         'novecientos treinta y dos mil trescientos ochenta y cuatro billones ' +
