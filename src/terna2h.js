@@ -6,23 +6,29 @@
  */
 function terna2h(terna) {
     let HumanString = "";
-
     if (isTupla(terna)){
         return tupla2h(Number(terna));
     }
-    const pesoIndex = Number(terna.substring(0,1));
-    const tuplaIndex = Number(terna.substring(1,3));
+    const pesoIndex = terna.slice(0,1);
+    const tuplaIndex = terna.slice(1,3);
 
     const HumanCentenas = pesoCentenas(pesoIndex);
     const HumanTupla = tupla2h(tuplaIndex);
 
-    if (pesoIndex < 1) {
-       HumanString = HumanTupla;
-    }
-
     if (pesoIndex >= 1) {
         HumanString = HumanCentenas + ' ' + HumanTupla;
     }
+
+    if (Number(pesoIndex) < 1 ) {
+       HumanString = HumanTupla;
+    }
+    //100
+    if (Number(pesoIndex) === 1 && tuplaIndex === "00") {
+        HumanString = tupla2h(Number(terna));
+    }
+
+
+
 
     return HumanString;
 }
@@ -131,6 +137,7 @@ function tupla2h(index) {
         "noventa y siete",
         "noventa y ocho",
         "noventa y nueve",
+        "cien"
     ];
     return tuplasRaw[index]
 }

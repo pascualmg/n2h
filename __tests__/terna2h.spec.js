@@ -24,6 +24,9 @@ test('del 0 al 99 va bien', function () {
     }
 });
 
+test('100', function () {
+    expect(terna2h('100')).toBe('cien');
+});
 //Este array viene directo de la wikipedia , así que lo podemos dar como cierto.
 function tupla2h(i) {
     const tuplasRaw = [
@@ -127,6 +130,7 @@ function tupla2h(i) {
         "noventa y siete",
         "noventa y ocho",
         "noventa y nueve",
+        "cien"
     ];
     return tuplasRaw[i]
 }
