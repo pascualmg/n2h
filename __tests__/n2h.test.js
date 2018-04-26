@@ -8,7 +8,7 @@ test('si le meto enorme como el 31415926535897932384626433832795 lo hace bien', 
         'cuatrocientos quince mil novecientos veintiséis cuatrillones ' +
         'quinientos treinta y cinco mil ochocientos noventa y siete trillones ' +
         'novecientos treinta y dos mil trescientos ochenta y cuatro billones ' +
-        'seiscientos veintiséis mil cuatrocientos treinta y tres millones' +
+        'seiscientos veintiséis mil cuatrocientos treinta y tres millones ' +
         'ochocientos treinta y dos mil setecientos noventa y cinco');
 });
 
