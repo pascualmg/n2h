@@ -9,6 +9,7 @@ function h(block, long, pesoAnterior, blockTranslator, weightTranslator) {
     let miPeso = pesoAnterior;
     let miBlock = block.slice(-1 * long);
 
+    //end recurse when
     if (isLastBlock(block, long)) {
         return blockTranslator(block) + ' ' + weightTranslator(miPeso) + ' ';
     }
