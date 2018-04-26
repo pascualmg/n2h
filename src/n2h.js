@@ -1,4 +1,5 @@
 const terna2h = require('./terna2h.js');
+const fillString = require('./utils/fillString.js');
 
 function n2h(numberStr) {
     return h(numberStr, 6, 0, block2h, blockWeightTranslator);
@@ -21,6 +22,15 @@ function blockWeightTranslator(peso){
      return ["", "millón", "billón", "trillon", "cuatrillón", "quintillón"][peso];
 }
 function block2h(block) {
+    //assert
+    if (block.length > 6){
+        console.log('Error critico , a block2h le está llegando un block de más de 6 caracteres!! omg k cojones estás tocando');
+    }
+    //normalize
+    if (block.length < 6){
+        let fixedLenghtBlock = fillString(block, '0', 6);
+      block = fixedLenghtBlock;
+ }
     let result = "";
     let lastBlockLenght = block.length;
     let terna1 = "";
