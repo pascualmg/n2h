@@ -16,46 +16,48 @@ function h(block, long, pesoAnterior, blockTranslator, weightTranslator) {
     }
 
     miPeso = pesoAnterior++;
-    return  h(restante,long, miPeso + 1,blockTranslator, weightTranslator) + blockTranslator(miBlock) + ' ' + weightTranslator(miPeso) + ' ';
+    return h(restante, long, miPeso + 1, blockTranslator, weightTranslator) + blockTranslator(miBlock) + ' ' + weightTranslator(miPeso) + ' ';
 }
 
-function blockWeightTranslator(peso){
-     return ["", "millón", "billón", "trillon", "cuatrillón", "quintillón"][peso];
+function blockWeightTranslator(peso) {
+    return ["", "millón", "billón", "trillon", "cuatrillón", "quintillón"][peso];
 }
 
+/**
+ * Traduce un block a lenguaje humano .
+ * un block , es una string que contiene caracteres numéricos únicamente.//todo:asserts y test.
+ * un block , es una string que tiene un tamaño fijo de 6 caracteres.
+ *
+ * @param block
+ * @returns {string}
+ */
 function block2h(block) {
     //assert
-    if (block.length > 6){
+    if (block.length > 6) {
         console.log('Error critico , a block2h le está llegando un block de más de 6 caracteres!! omg k cojones estás tocando');
-        console.log(block);
+        console.error(block);
     }
-    //normalize
-    if (block.length < 6){
+    //normalize AVOID bugs better than fix them.
+    if (block.length < 6) {
         let fixedLenghtBlock = fillString(block, '0', 6);
-      block = fixedLenghtBlock;
- }
+        block = fixedLenghtBlock;
+    }
     let result = "";
-    let lastBlockLenght = block.length;
     let terna1 = "";
     let terna2 = "";
 
     let translatedTerna1 = "";
     let translatedTerna2 = "";
 
-    if (lastBlockLenght <= 3) {
-        terna1 = block;
-        translatedTerna1 = terna2h(terna1);
-        return translatedTerna1;
-    }
-    if (lastBlockLenght >= 3) {
-        terna1 = block.slice(-3);
-        terna2 = block.slice(0, 3);
-        translatedTerna1 = terna2h(terna1);
-        translatedTerna2 = terna2h(terna2);
-        return translatedTerna2 + ' mil ' + translatedTerna1;
-    }
+    terna1 = block.slice(-3);
+    terna2 = block.slice(0, 3);
+    translatedTerna1 = terna2h(terna1);
+    translatedTerna2 = terna2h(terna2);
+    return translatedTerna2 + ' mil ' + translatedTerna1;
 }
-function isLastBlock(numberStr, long){
-   return numberStr.length <= long;
+
+function isLastBlock(numberStr, long) {
+    return numberStr.length <= long;
 }
+
 module.exports = n2h;
