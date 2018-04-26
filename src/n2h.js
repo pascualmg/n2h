@@ -8,24 +8,26 @@ function n2h(numberStr) {
 function h(block, long, pesoAnterior, blockTranslator, weightTranslator) {
     let miPeso = pesoAnterior;
     let miBlock = block.slice(-1 * long);
+    let restante = block.slice(0, block.length - long);
 
     //end recurse when
     if (isLastBlock(block, long)) {
-        return blockTranslator(block) + ' ' + weightTranslator(miPeso) + ' ';
+        return blockTranslator(miBlock) + ' ' + weightTranslator(miPeso) + ' ';
     }
 
     miPeso = pesoAnterior++;
-    nextBlock = block.slice(0, block.length-long);
-    return  h(nextBlock,long, miPeso + 1,block2h, blockWeightTranslator) + blockTranslator(block) + ' ' + weightTranslator(miPeso) + ' ';
+    return  h(restante,long, miPeso + 1,blockTranslator, weightTranslator) + blockTranslator(miBlock) + ' ' + weightTranslator(miPeso) + ' ';
 }
 
 function blockWeightTranslator(peso){
      return ["", "millón", "billón", "trillon", "cuatrillón", "quintillón"][peso];
 }
+
 function block2h(block) {
     //assert
     if (block.length > 6){
         console.log('Error critico , a block2h le está llegando un block de más de 6 caracteres!! omg k cojones estás tocando');
+        console.log(block);
     }
     //normalize
     if (block.length < 6){
