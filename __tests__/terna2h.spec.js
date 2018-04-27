@@ -24,10 +24,26 @@ test('del 0 al 99 va bien', function () {
     }
 });
 
-test('100', function () {
-    expect(terna2h('100')).toBe('cien');
+test('42', function () {
+    expect(terna2h("42")).toBe('cuarenta y dos');
 });
+
+test('31', function () {
+    expect(terna2h("31")).toBe('treinta y uno');
+});
+
+test('41', function () {
+    expect(terna2h("41")).toBe('cuarenta y uno');
+});
+
+test('100', function () {
+    expect(terna2h("100")).toBe('cien');
+});
+
+
 //Este array viene directo de la wikipedia , así que lo podemos dar como cierto.
+//NO modificar esta función bajo ningún concepto excepto que las reglas de la
+// lengua cambien , algo que no va a pasar , jamás a menos que cambies de idioma.
 function tupla2h(i) {
     const tuplasRaw = [
         "cero",
