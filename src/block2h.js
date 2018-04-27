@@ -1,3 +1,5 @@
+const fillString = require('./utils/fillString.js');
+const terna2h = require('./terna2h.js');
 /**
  * Traduce un block a lenguaje humano .
  * un block , es una string que contiene caracteres numéricos únicamente.//todo:asserts y test.
@@ -10,7 +12,7 @@ module.exports = function block2h(block) {
     const millarSeparator = ' mil ';
     let isActiveTerna2 = true;
     let isActiveMillar = true;
-    //assert
+    //assert is not bigger than a period
     if (block.length > 6) {
         console.log('Error critico , a block2h le está llegando un block de más de 6 caracteres!! omg k cojones estás tocando');
         console.error(block);
@@ -20,7 +22,8 @@ module.exports = function block2h(block) {
         let fixedLenghtBlock = fillString(block, '0', 6);
         block = fixedLenghtBlock;
     }
-    let result = "";
+
+    let resultStr = "";
     let terna1 = "";
     let terna2 = "";
 
@@ -47,7 +50,6 @@ module.exports = function block2h(block) {
     }
 
     //todo:refactor de esto a una linea en el return con los ()? , no se por que no van.
-    let resultStr = "";
     if (isActiveTerna2){
         resultStr = resultStr.concat(translatedTerna2);
     }
