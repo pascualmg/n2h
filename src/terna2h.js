@@ -13,21 +13,21 @@ function terna2h(terna) {
     const tuplaIndex = normalizedTerna.slice(1,3);
 
     if (pesoIndex === "0"){
-        return tupla2h(Number(tuplaIndex));//todo: quitar ese number refactorizando esto a la f
+        return  blockTranslatorTupla(tuplaIndex);
     }
-    const HumanCentenas = pesoCentenas(Number(pesoIndex));
-    const HumanTupla = tupla2h(Number(tuplaIndex));
+    const HumanCentenas = weightTranslator(Number(pesoIndex));
+    const HumanTupla = blockTranslatorTupla(Number(tuplaIndex));
 
     if (pesoIndex >= 1) {
         HumanString = HumanCentenas + ' ' + HumanTupla;
-    }
+}
 
     if (Number(pesoIndex) < 1 ) {
        HumanString = HumanTupla;
     }
     //100
     if (Number(pesoIndex) === 1 && tuplaIndex === "00") {
-        HumanString = tupla2h(Number(terna));
+        HumanString =  blockTranslatorTupla(Number(terna));
     }
     return HumanString;
 }
@@ -44,10 +44,11 @@ function isTupla(normalizedTerna){
     if ( normalizedTerna)
     return isTupla;
 }
-function tupla2h(index) {
+
+function  blockTranslatorTupla(tupla) {
     const tuplasRaw = [
         "cero",
-        "uno",
+        "uno",//la o es la excepción
         "dos",
         "tres",
         "cuatro",
@@ -148,9 +149,9 @@ function tupla2h(index) {
         "noventa y nueve",
         "cien"
     ];
-    return tuplasRaw[index]
+    return tuplasRaw[Number(tupla)];
 }
-function pesoCentenas(index){
+function weightTranslator(index){
     let centenas = "";
    const pesoCentenas = [
        "",//0

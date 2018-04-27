@@ -8,7 +8,7 @@ const terna2h = require('./terna2h.js');
  * @param block
  * @returns {string}
  */
-module.exports = function block2h(block) {
+module.exports = function periodTranslator(block) {
     const millarSeparator = ' mil ';
     let isActiveTerna2 = true;
     let isActiveMillar = true;

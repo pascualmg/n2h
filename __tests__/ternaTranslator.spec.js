@@ -6,42 +6,45 @@
 
 */
 
-const terna2h = require('../src/terna2h');
+const ternaTranslator = require('../src/terna2h.js');
 
 test('si le meto 745', function () {
-   expect(terna2h('745')).toBe('setecientos cuarenta y cinco');
+   expect(ternaTranslator('745')).toBe('setecientos cuarenta y cinco');
 });
 test('si le meto 456', function () {
-    expect(terna2h('456')).toBe('cuatrocientos cincuenta y seis');
+    expect(ternaTranslator('456')).toBe('cuatrocientos cincuenta y seis');
 });
 test('si le meto 27', function () {
-    expect(terna2h('27')).toBe('veintisiete');
+    expect(ternaTranslator('27')).toBe('veintisiete');
 });
 
 test('del 0 al 99 va bien', function () {
     for (let i = 0;i<=99;i++){
-        expect(terna2h(i.toString())).toBe(tupla2h(i));
+        expect(ternaTranslator(i.toString())).toBe(tupla2h(i));
     }
 });
-
+test('1', function () {
+    expect(ternaTranslator("1")).toBe('uno');
+});
 test('42', function () {
-    expect(terna2h("42")).toBe('cuarenta y dos');
+    expect(ternaTranslator("42")).toBe('cuarenta y dos');
 });
 
 test('31', function () {
-    expect(terna2h("31")).toBe('treinta y uno');
+    expect(ternaTranslator("31")).toBe('treinta y uno');
 });
 
 test('41', function () {
-    expect(terna2h("41")).toBe('cuarenta y uno');
+    expect(ternaTranslator("41")).toBe('cuarenta y uno');
 });
 
 test('100', function () {
-    expect(terna2h("100")).toBe('cien');
+    expect(ternaTranslator("100")).toBe('cien');
 });
 
 
-//Este array viene directo de la wikipedia , así que lo podemos dar como cierto.
+//Este array viene directo de la wikipedia , así que lo podemos dar como cierto
+// y se usa para test solamente.
 //NO modificar esta función bajo ningún concepto excepto que las reglas de la
 // lengua cambien , algo que no va a pasar , jamás a menos que cambies de idioma.
 function tupla2h(i) {
