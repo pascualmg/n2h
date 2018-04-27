@@ -4,16 +4,19 @@
  * no es superior a novecientos noventa y nueve 999 y no es inferior a 000.
  * @param terna
  */
-function terna2h(terna) {
-    let HumanString = "";
-    if (isTupla(terna)){
-        return tupla2h(Number(terna));
-    }
-    const pesoIndex = terna.slice(0,1);
-    const tuplaIndex = terna.slice(1,3);
+const fillString = require('./utils/fillString.js');
 
-    const HumanCentenas = pesoCentenas(pesoIndex);
-    const HumanTupla = tupla2h(tuplaIndex);
+function terna2h(terna) {
+    const normalizedTerna = fillString(terna, "0",3);
+    let HumanString = "";
+    const pesoIndex = normalizedTerna.slice(0,1);
+    const tuplaIndex = normalizedTerna.slice(1,3);
+
+    if (pesoIndex === "0"){
+        return tupla2h(Number(tuplaIndex));//todo: quitar ese number refactorizando esto a la f
+    }
+    const HumanCentenas = pesoCentenas(Number(pesoIndex));
+    const HumanTupla = tupla2h(Number(tuplaIndex));
 
     if (pesoIndex >= 1) {
         HumanString = HumanCentenas + ' ' + HumanTupla;
@@ -26,14 +29,20 @@ function terna2h(terna) {
     if (Number(pesoIndex) === 1 && tuplaIndex === "00") {
         HumanString = tupla2h(Number(terna));
     }
-
-
-
-
     return HumanString;
 }
-function isTupla(terna){
-    return terna.length < 3;
+function isTupla(normalizedTerna){
+    let isTupla = false;
+    //todo: refactor assertion is normalized terna experimental
+    if (normalizedTerna.length > 3) {
+        throw function invalidTernaException(){
+            this.toString = 'me estás pasando una terna sin normalizar ' +
+                ', subnormal la vas a liar parda con ' + normalizedTerna;
+        };
+    }
+
+    if ( normalizedTerna)
+    return isTupla;
 }
 function tupla2h(index) {
     const tuplasRaw = [
