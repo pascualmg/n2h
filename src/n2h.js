@@ -1,12 +1,14 @@
-const terna2h = require('./terna2h.js');
-const fillString = require('./utils/fillString.js');
 const block2h = require('./block2h.js');
 
+// https://es.wikipedia.org/wiki/Anexo:Nombres_de_los_n%C3%BAmeros_en_espa%C3%B1ol
+// https://wikimedia.org/api/rest_v1/media/math/render/svg/6e2fb44a6df602e5c9522edf731d3889cd6c208b
 function n2h(numberStr) {
-    return h(numberStr, 6, 0, block2h, blockWeightTranslator).trim();
+    const periodLenght = 6;
+    const initialWeight = 0;
+    return parseRecursively (numberStr, periodLenght, initialWeight, block2h, blockWeightTranslator).trim();
 }
 
-function h(block, long, pesoAnterior, blockTranslator, weightTranslator) {
+function parseRecursively(block, long, pesoAnterior, blockTranslator, weightTranslator) {
     let miPeso = pesoAnterior;
     let miBlock = block.slice(-1 * long);
     let restante = block.slice(0, block.length - long);
@@ -17,14 +19,12 @@ function h(block, long, pesoAnterior, blockTranslator, weightTranslator) {
     }
 
     miPeso = pesoAnterior++;
-    return h(restante, long, miPeso + 1, blockTranslator, weightTranslator) + blockTranslator(miBlock) + ' ' + weightTranslator(miPeso) + ' ';
+    return parseRecursively (restante, long, miPeso + 1, blockTranslator, weightTranslator) + blockTranslator(miBlock) + ' ' + weightTranslator(miPeso) + ' ';
 }
 
 function blockWeightTranslator(peso) {
     return ["", "millones", "billones", "trillones", "cuatrillones", "quintillones"][peso];
 }
-
-
 
 function isLastBlock(numberStr, long) {
     return numberStr.length <= long;
