@@ -1,10 +1,12 @@
 const fillString = require('./utils/fillString.js');
 const terna2h = require('./terna2h.js');
+const weightPeriodTranslator = require('./locale/es/weightPeriodTranslator.js');
+
 /**
- * Traduce un block a lenguaje humano .
+ * Traduce un block a lenguaje humano en cualquier idioma conocido o inventado.
+ *
  * un block , es una string que contiene caracteres numéricos únicamente.//todo:asserts y test.
- * un block , es una string que tiene un tamaño fijo de 6 caracteres.
- * vg->[000101] es un block que se compone de 2 ternas [{terna2}{terna1}]
+* vg->[000101] es un block que se compone de 2 ternas [{terna2}{terna1}]
  * @param block
  * @returns {string}
  */
@@ -38,6 +40,11 @@ module.exports = function periodTranslator(block, weight) {
     translatedTerna2 = terna2h(terna2);
     translatedTerna1 = terna2h(terna1);
 
+    //si el block(periodo) viene vacio no hacemos nada.
+    const isEmptyBlock = (terna2 === "000" && terna1 === "000");
+    if(isEmptyBlock){
+        return resultStr;
+    }
 
     let lastDigitOfTerna1 = terna1.slice(-1);
     let imTheFirstPeriod = (weight === 0);
@@ -45,7 +52,9 @@ module.exports = function periodTranslator(block, weight) {
     if(imTheFirstPeriod && lastDigitOfTerna1 === "1" ){
         translatedTerna1 = translatedTerna1.concat("o");
     }
-
+    if(!imTheFirstPeriod && terna1 === "000" ){
+        translatedTerna1 = "";
+    }
     if (terna2 === '000'){
         isActiveTerna2 = false;
         isActiveMillar = false;
@@ -56,15 +65,31 @@ module.exports = function periodTranslator(block, weight) {
         isActiveTerna2 = false;
     }
 
-    //todo:refactor de esto a una linea en el return con los ()? , no se por que no van.
+    //Si el weightSeparator es plural o no nene, ¿un nonillón o dos nonillones?
+    const firstDigitOfTerna2 = terna2.slice(0,1);
+
+    let isPlural = true;
+    if (firstDigitOfTerna2 === "1") {
+        isPlural = false;
+    }
+
+
+    //todo: construccion de cadena a retornar.
     if (isActiveTerna2){
         resultStr = resultStr.concat(translatedTerna2);
     }
     if(isActiveMillar){
-        resultStr = resultStr.concat(millarSeparator);
+        resultStr = resultStr
+            .concat(millarSeparator);
     }
 
-    return resultStr.concat(translatedTerna1).trim();
+    resultStr = resultStr
+        .concat(translatedTerna1)
+        .concat(!imTheFirstPeriod?" ":"")
+        .concat(!imTheFirstPeriod?weightPeriodTranslator(weight,isPlural):"")
+        .concat(!imTheFirstPeriod?" ":"");
+   return resultStr;
+
     // return translatedTerna2 + millarSeparator + translatedTerna1;
-}
+};
 
