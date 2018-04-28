@@ -9,12 +9,10 @@ module.exports = function weightPeriodTranslator(weight, isPlural) {
         const singularPrefix = "ón";
         const pluralPrefix = "ones";
 
-        const hasOverflow = weight > periodTranslation.length;
+        const hasOverflow = weight > periodTranslation.length -1;
         let translatedWeightStr = "notTranslated";
 
-        if (isPlural === 'undefined'){
-                isPlural = true;
-        }
+
         if(!hasOverflow){
             translatedWeightStr =  periodTranslation[weight]
                 .concat((isPlural === true)?pluralPrefix:singularPrefix)
