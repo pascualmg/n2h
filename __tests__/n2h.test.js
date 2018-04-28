@@ -5,7 +5,7 @@ const n2h = require('../src/n2h');
 
 //https://wikimedia.org/api/rest_v1/media/math/render/svg/6e2fb44a6df602e5c9522edf731d3889cd6c208b
 describe('n2h works fine with numberStrs with more than one period', function () {
-    test('31415926535897932384626433832795 works fine', function () {
+    test('31415926535897932384626433832791 works fine', function () {
         expect(n2h('31415926535897932384626433832791')).toEqual('treinta y un quintillones ' +
             'cuatrocientos quince mil novecientos veintiséis cuatrillones ' +
             'quinientos treinta y cinco mil ochocientos noventa y siete trillones ' +
@@ -30,5 +30,8 @@ describe('n2h works fine with numbers withe less than one period', function () {
 
     test('25001', function () {
         expect(n2h('25001')).toBe('veinticinco mil uno');
+    });
+    test('hago bien el 31', function () {
+        expect(n2h('31')).toBe('treinta y uno');
     });
 });

@@ -24,18 +24,18 @@ test('del 0 al 99 va bien', function () {
     }
 });
 test('1', function () {
-    expect(ternaTranslator("1")).toBe('uno');
+    expect(ternaTranslator("1")).toBe('un');
 });
 test('42', function () {
     expect(ternaTranslator("42")).toBe('cuarenta y dos');
 });
 
 test('31', function () {
-    expect(ternaTranslator("31")).toBe('treinta y uno');
+    expect(ternaTranslator("31")).toBe('treinta y un');
 });
 
 test('41', function () {
-    expect(ternaTranslator("41")).toBe('cuarenta y uno');
+    expect(ternaTranslator("41")).toBe('cuarenta y un');
 });
 
 test('100', function () {
@@ -50,7 +50,7 @@ test('100', function () {
 function tupla2h(i) {
     const tuplasRaw = [
         "cero",
-        "uno",
+        "un",
         "dos",
         "tres",
         "cuatro",
@@ -80,7 +80,7 @@ function tupla2h(i) {
         "veintiocho",
         "veintinueve",
         "treinta",
-        "treinta y uno",
+        "treinta y un",
         "treinta y dos",
         "treinta y tres",
         "treinta y cuatro",
@@ -90,7 +90,7 @@ function tupla2h(i) {
         "treinta y ocho",
         "treinta y nueve",
         "cuarenta",
-        "cuarenta y uno",
+        "cuarenta y un",
         "cuarenta y dos",
         "cuarenta y tres",
         "cuarenta y cuatro",
@@ -100,7 +100,7 @@ function tupla2h(i) {
         "cuarenta y ocho",
         "cuarenta y nueve",
         "cincuenta",
-        "cincuenta y uno",// cincuenta y una	Delante de un sustantivo: «cincuenta y un» o «cincuenta y una».
+        "cincuenta y un",// cincuenta y una	Delante de un sustantivo: «cincuenta y un» o «cincuenta y una».
         "cincuenta y dos",
         "cincuenta y tres",
         "cincuenta y cuatro",
@@ -110,7 +110,7 @@ function tupla2h(i) {
         "cincuenta y ocho",
         "cincuenta y nueve",
         "sesenta",
-        "sesenta y uno",
+        "sesenta y un",
         "sesenta y dos",
         "sesenta y tres",
         "sesenta y cuatro",
@@ -120,7 +120,7 @@ function tupla2h(i) {
         "sesenta y ocho",
         "sesenta y nueve",
         "setenta",
-        "setenta y uno",
+        "setenta y un",
         "setenta y dos",
         "setenta y tres",
         "setenta y cuatro",
@@ -130,7 +130,7 @@ function tupla2h(i) {
         "setenta y ocho",
         "setenta y nueve",
         "ochenta",
-        "ochenta y uno", //a
+        "ochenta y un", //a
         "ochenta y dos",
         "ochenta y tres",
         "ochenta y cuatro",
@@ -140,7 +140,7 @@ function tupla2h(i) {
         "ochenta y ocho",
         "ochenta y nueve",
         "noventa",
-        "noventa y uno",// noventa y una	Delante de un sustantivo: «noventa y un» o «noventa y una».
+        "noventa y un",// noventa y una	Delante de un sustantivo: «noventa y un» o «noventa y una».
         "noventa y dos",
         "noventa y tres",
         "noventa y cuatro",
