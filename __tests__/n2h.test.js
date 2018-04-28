@@ -34,4 +34,8 @@ describe('n2h works fine with numbers withe less than one period', function () {
     test('hago bien el 31', function () {
         expect(n2h('31')).toBe('treinta y uno');
     });
+
+     test('hago bien un nonillón', function () {
+        expect(n2h('1000000000000000000000000000000000000000000000000000000')).toBe('un nonillón');
+    });
 });
