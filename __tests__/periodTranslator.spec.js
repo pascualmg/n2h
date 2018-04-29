@@ -16,3 +16,9 @@ test('25001', function () {
 test('Si el primer dígito es un 1 en un número de más de una terna, entonces no tengo que decir "uno mil"', function () {
     expect(periodTranslator('1001',0)).not.toBe('uno mil uno');
 });
+
+describe('traduzco bien numeros muy grandes', function () {
+    test('hago bien un nonillón', function () {
+        expect(periodTranslator('1', 9)).toBe('un nonillón ');
+    });
+});

@@ -41,6 +41,7 @@ const periodTranslator = function periodTranslator(block, weight) {
 
 
     const lastDigitOfTerna1 = terna1.slice(-1);
+
     //not [000xxx] fix cero mil. y el segundo el 1001
 
     translatedTerna2 = terna2h(terna2);
@@ -78,14 +79,15 @@ const periodTranslator = function periodTranslator(block, weight) {
     }
 
     //Si el weightSeparator es plural o no nene, ¿un nonillón o dos nonillones?
-    const firstDigitOfTerna2 = terna2.slice(0, 1);
+    const firstDigitOfBlock = block.slice(-1);
 
-    let isPlural = true;
-    if (firstDigitOfTerna2 === "1") {
-        isPlural = false;
+    //plurals rule.
+    let isPluralWeight = true;
+    if (terna1=== "001" && isEmpty(terna2)) {
+        isPluralWeight = false;
     }
 
-    //todo: construccion de cadena a retornar.
+    //SrringBuilding... translatedTerna2 + millarSeparator + translatedTerna1;
     if (isActiveTerna2) {
         resultStr = resultStr
             .concat(translatedTerna2)
@@ -102,11 +104,8 @@ const periodTranslator = function periodTranslator(block, weight) {
     resultStr = resultStr
         .concat(translatedTerna1)
         .concat(!imTheFirstPeriod ? " " : "")
-        .concat(!imTheFirstPeriod ? weightPeriodTranslator(weight, isPlural) : "")
-        .concat(!imTheFirstPeriod ? " " : "");
+        .concat(!imTheFirstPeriod ? weightPeriodTranslator(weight, isPluralWeight)+" " : "")
     return resultStr;
-
-    // return translatedTerna2 + millarSeparator + translatedTerna1;
 };
 
 periodTranslator.numericInexistenceTranslation = "cero";
