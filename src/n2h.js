@@ -4,7 +4,11 @@ const periodTranslator = require('./periodTranslator.js');
 function n2h(numberStr) {
     const periodLenght = 6;
     const initialWeight = 0;
-    return parseRecursively (numberStr, periodLenght, initialWeight, periodTranslator).trim();
+
+    let TranslatedStr = parseRecursively (numberStr, periodLenght, initialWeight, periodTranslator);
+
+    return (TranslatedStr === "")?periodTranslator.numericInexistenceTranslation:TranslatedStr;
+
 }
 /**
  * https://es.wikipedia.org/wiki/Anexo:Nombres_de_los_n%C3%BAmeros_en_espa%C3%B1ol

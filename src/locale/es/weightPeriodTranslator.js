@@ -12,7 +12,6 @@ module.exports = function weightPeriodTranslator(weight, isPlural) {
         const hasOverflow = weight > periodTranslation.length -1;
         let translatedWeightStr = "notTranslated";
 
-
         if(!hasOverflow){
             translatedWeightStr =  periodTranslation[weight]
                 .concat((isPlural === true)?pluralPrefix:singularPrefix)

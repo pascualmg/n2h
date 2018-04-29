@@ -47,7 +47,7 @@ function isTupla(normalizedTerna){
 
 function  blockTranslatorTupla(tupla) {
     const tuplasRaw = [
-        "cero",
+        "",
         "un",//la o es la excepción
         "dos",
         "tres",

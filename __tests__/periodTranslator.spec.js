@@ -5,6 +5,10 @@ test('hago bien el 31', function () {
 test('hago bien el 1001', function () {
     expect(periodTranslator('1001',0)).toBe('mil uno');
 });
+
+test('hago bien el 1000', function () {
+    expect(periodTranslator('1000',0)).toBe('mil');
+});
 test('25001', function () {
     expect(periodTranslator('25001',0)).toBe('veinticinco mil uno');
 });

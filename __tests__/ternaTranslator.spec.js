@@ -18,8 +18,8 @@ test('si le meto 27', function () {
     expect(ternaTranslator('27')).toBe('veintisiete');
 });
 
-test('del 0 al 99 va bien', function () {
-    for (let i = 0;i<=99;i++){
+test('del 1 al 99 va bien', function () {
+    for (let i = 1;i<=99;i++){
         expect(ternaTranslator(i.toString())).toBe(tupla2h(i));
     }
 });

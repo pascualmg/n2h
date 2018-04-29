@@ -27,7 +27,15 @@ describe('n2h works fine with numbers withe less than one period', function () {
     test('hago bien el 1001', function () {
         expect(n2h('1001')).toBe('mil uno');
     });
-
+    test('hago bien el 1000', function () {
+        expect(n2h('1000')).toBe('mil');
+    });
+     test('hago bien el 0', function () {
+        expect(n2h('0')).toBe('cero');
+    });
+    test('hago bien el 1', function () {
+        expect(n2h('1')).toBe('uno');
+    });
     test('25001', function () {
         expect(n2h('25001')).toBe('veinticinco mil uno');
     });
