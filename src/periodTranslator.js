@@ -1,5 +1,5 @@
 const fillString = require('./utils/fillString.js');
-const terna2h = require('./terna2h.js');
+const terna2h = require('./ternaTranslator.js');
 const weightPeriodTranslator = require('./locale/es/weightPeriodTranslator.js');
 const hasOnlyChar = require('./asserts/hasOnlyChar');
 /**

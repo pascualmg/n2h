@@ -6,7 +6,7 @@
 
 */
 
-const ternaTranslator = require('../src/terna2h.js');
+const ternaTranslator = require('../src/ternaTranslator.js');
 
 test('si le meto 745', function () {
    expect(ternaTranslator('745')).toBe('setecientos cuarenta y cinco');

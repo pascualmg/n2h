@@ -6,7 +6,7 @@
  */
 const fillString = require('./utils/fillString.js');
 
-function terna2h(terna) {
+function ternaTranslator(terna) {
     const normalizedTerna = fillString(terna, "0",3);
     let HumanString = "";
     const pesoIndex = normalizedTerna.slice(0,1);
@@ -168,4 +168,4 @@ function weightTranslator(index){
    centenas =  pesoCentenas[index];
    return centenas;
 }
-module.exports = terna2h;
+module.exports = ternaTranslator;
