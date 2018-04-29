@@ -1,7 +1,7 @@
 /**
  * Se necesita una func que garantice el tamaño  de un string además de con que caracteres se rellean los espacios faltantes.
  **/
-const fillString = require('../src/utils/fillstring.js');
+const fillString = require('../../src/utils/fillString.js');
 
 describe('fillString', function () {
    test('si la cadena no tiene la longitud indicada , la añado rellenando con el char indicado', function () {
