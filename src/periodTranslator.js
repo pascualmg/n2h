@@ -13,11 +13,11 @@ const hasOnlyChar = require('./asserts/hasOnlyChar');
 const periodTranslator = function periodTranslator(block, weight) {
     const millarSeparator = 'mil';
 
+
     function normalizeBlock() {
         //assert is not bigger than a period
         if (block.length > 6) {
-            console.log('Error critico , a block2h le está llegando un block de más de 6 caracteres!! omg k cojones estás tocando');
-            console.error(block);
+            throw 'bloque demasiado largo';
         }
         //normalize AVOID bugs better than fix them.
         if (block.length < 6) {

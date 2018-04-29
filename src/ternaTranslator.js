@@ -22,27 +22,12 @@ function ternaTranslator(terna) {
         HumanString = HumanCentenas + ' ' + HumanTupla;
 }
 
-    if (Number(pesoIndex) < 1 ) {
-       HumanString = HumanTupla;
-    }
+
     //100
     if (Number(pesoIndex) === 1 && tuplaIndex === "00") {
         HumanString =  blockTranslatorTupla(Number(terna));
     }
     return HumanString;
-}
-function isTupla(normalizedTerna){
-    let isTupla = false;
-    //todo: refactor assertion is normalized terna experimental
-    if (normalizedTerna.length > 3) {
-        throw function invalidTernaException(){
-            this.toString = 'me estás pasando una terna sin normalizar ' +
-                ', subnormal la vas a liar parda con ' + normalizedTerna;
-        };
-    }
-
-    if ( normalizedTerna)
-    return isTupla;
 }
 
 function  blockTranslatorTupla(tupla) {

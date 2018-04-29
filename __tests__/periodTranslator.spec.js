@@ -22,3 +22,10 @@ describe('traduzco bien numeros muy grandes', function () {
         expect(periodTranslator('1', 9)).toBe('un nonillón ');
     });
 });
+
+describe('si me pasan un periodo demasiado grande lloro como un crio', function () {
+    test('periodo demasiado grande', function () {
+        function blockTooLarge(){};
+        expect(function (){periodTranslator('19949949949949949949', 9)}).toThrow('bloque demasiado largo');
+    });
+});
