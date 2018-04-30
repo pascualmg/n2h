@@ -62,15 +62,13 @@ const periodTranslator = function periodTranslator(block, weight) {
     if (imTheFirstPeriod && lastDigitOfTerna1 === "1") {
         translatedTerna1 = translatedTerna1.concat("o");
     }
-    if (isEmpty(terna1) && !isEmpty(terna2)) {
-        translatedTerna1 = "";
-    }
+
     if (isEmpty(terna2)) {
         isActiveTerna2 = false;
         isActiveMillar = false;
     }
     if (hasOnlyChar("0", terna1)) {
-        translatedTerna2 = "";
+        translatedTerna1 = "";
     }
     //1001 exception
     if (terna2 === '001') {
