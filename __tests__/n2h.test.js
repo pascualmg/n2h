@@ -43,6 +43,15 @@ describe('n2h works fine with numbers withe less than one period', function () {
         expect(n2h('31')).toBe('treinta y uno');
     });
 
+    test('cien mil', function () {
+        expect(n2h('100000')).toBe('cien mil');
+    });
+    test('diez mil', function () {
+        expect(n2h('10000')).toBe('diez mil');
+    });
+    test('un millón un billón', function () {
+        expect(n2h('1000001000000')).toBe('un billón un millón');
+    });
      test('hago bien un nonillón', function () {
         expect(n2h('1000000000000000000000000000000000000000000000000000000')).toBe('un nonillón');
     });

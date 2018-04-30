@@ -29,3 +29,12 @@ describe('si me pasan un periodo demasiado grande lloro como un crio', function 
         expect(function (){periodTranslator('19949949949949949949', 9)}).toThrow('bloque demasiado largo');
     });
 });
+
+
+test('cien mil', function () {
+    expect(periodTranslator('10000', 0)).toBe('diez mil');
+});
+
+test('cien mil', function () {
+    expect(periodTranslator('100000', 0)).toBe('cien mil');
+});
