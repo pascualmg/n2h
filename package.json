@@ -4,6 +4,7 @@
   "description": "Transforms a number to human readable language",
   "main": "n2h.js",
   "scripts": {
+    "build": "webpack --watch --colors --mode=development",
     "test": "jest -o --watch"
   },
   "repository": {
