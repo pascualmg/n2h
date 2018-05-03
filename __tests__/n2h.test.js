@@ -46,6 +46,9 @@ describe('n2h works fine with numbers withe less than one period', function () {
     test('cien mil', function () {
         expect(n2h('100000')).toBe('cien mil');
     });
+  test('trescientos cinco', function () {
+    expect(n2h('305')).toBe('trescientos cinco');
+  });
     test('diez mil', function () {
         expect(n2h('10000')).toBe('diez mil');
     });
