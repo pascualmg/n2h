@@ -1,7 +1,6 @@
 const periodTranslator = require('./periodTranslator.js');
 
 
-console.log('cargando n2h');
 function n2h(numberStr) {
 
     const periodLenght = 6;
@@ -17,7 +16,7 @@ function n2h(numberStr) {
  * si un block es una string que tiene un tamaño fijo de 3 caracteres es una terna.
  * si un block es una string que tiene un tamaño fijo de 2 caracteres es una tupla.
 **/
-function parseRecursively(block, long, pesoAnterior, blockTranslator, weightTranslator) {
+function parseRecursively(block, long, pesoAnterior, blockTranslator) {
     let miPeso = pesoAnterior;
     let miBlock = block.slice(-1 * long);
     let restante = block.slice(0, block.length - long);
