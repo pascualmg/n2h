@@ -1,25 +1,28 @@
-function Persona(nombre, edad) {
-  this.nombre = nombre;
-  this.edad = edad;
-
+function Persona(sexo) {
+  this.sexo = sexo;
 };
 
 Persona.prototype = {
   saluda: function Saludar() {
-    console.log('hola me llamo' + this.nombre + 'y tengo ' + this.edad + ' años');
+    console.log('hola me llamo ' + this.nombre + 'y soy ' + this.sexo);
   }
 };
 
-var levita = new Persona('andres', '100');
-var passh = new Persona('passh', '99');
+
+function Hombre(nombre) {
+  Persona.call(this, 'varon');
+  this.nombre = nombre;
+}
+
+Hombre.prototype = Object.create(Persona.prototype);
+//Hombre.prototype.constructor = Hombre;
+//Hombre.prototype = Persona.prototype;
 
 
-var Levitoide = Object.create(levita);
-var passhoide = Object.create(passh);
+var levita = new Hombre('andres');
+
+console.log('levita.sexo',levita.sexo );//TODO: borrame.
 
 
 
-Levitoide.saluda();
-
-
-
+levita.saluda();
