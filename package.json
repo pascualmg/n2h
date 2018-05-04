@@ -17,13 +17,7 @@
     "word",
     "human"
   ],
-  "author": "Andrés Perez Cerón",
-  "contributors": [
-    {
-      "name": "Pascual Muñoz Galián",
-      "url": "https://github.com/pascualmg"
-    }
-  ],
+  "author": "Pascual Muñoz Galián",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pascualmg/n2h/issues"
