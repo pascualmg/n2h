@@ -6,7 +6,7 @@
     <title>demo number to ...</title>
 </head>
 <body>
-<input name="input" type="text" maxlength="4096" id="input" class="input"/>
+<input name="input" type="text" maxlength="23452345234523452345" id="input" class="input"/>
 <span id="output"></span>
 <script>
     var n2h =  /******/ (function(modules) { // webpackBootstrap
@@ -154,15 +154,16 @@
     var output = document.getElementById("output");
 
     function recalcula() {
-      console.log('realculando');//TODO: borrame.
-
       output.textContent = n2h(input.value);
-      // output.textContent = input.value;
-
     }
 
+    var worker = new Worker('bundle.js');
+
+    worker.addEventListener('mensaje', function (e) {
+        console.log('el worker dice', e.data);//TODO: borrame.
+    }, false );
+
     window.onkeyup = recalcula;
-    input.onchange =  recalcula;
 
     console.log('input: ' , input);
     console.log('output: ' , output);
