@@ -1,173 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="bundle.js">
-    </script>
+    <script src="bundle.js"></script>
     <meta charset="UTF-8">
     <title>demo number to ...</title>
 </head>
 <body>
 <input name="input" type="text" maxlength="4096" id="input" class="input"/>
-<button id="boton" type="button" >pulsa</button>
 <span id="output"></span>
 <script>
-    var n2h =  (function(modules) { // webpackBootstrap
-        /******/ 	// The module cache
-        /******/ 	var installedModules = {};
+    var n2h =  /******/ (function(modules) { // webpackBootstrap
+      /******/ 	// The module cache
+      /******/ 	var installedModules = {};
+      /******/
+      /******/ 	// The require function
+      /******/ 	function __webpack_require__(moduleId) {
         /******/
-        /******/ 	// The require function
-        /******/ 	function __webpack_require__(moduleId) {
-            /******/
-            /******/ 		// Check if module is in cache
-            /******/ 		if(installedModules[moduleId]) {
-                /******/ 			return installedModules[moduleId].exports;
-                /******/ 		}
-            /******/ 		// Create a new module (and put it into the cache)
-            /******/ 		var module = installedModules[moduleId] = {
-                /******/ 			i: moduleId,
-                /******/ 			l: false,
-                /******/ 			exports: {}
-                /******/ 		};
-            /******/
-            /******/ 		// Execute the module function
-            /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-            /******/
-            /******/ 		// Flag the module as loaded
-            /******/ 		module.l = true;
-            /******/
-            /******/ 		// Return the exports of the module
-            /******/ 		return module.exports;
-            /******/ 	}
+        /******/ 		// Check if module is in cache
+        /******/ 		if(installedModules[moduleId]) {
+          /******/ 			return installedModules[moduleId].exports;
+          /******/ 		}
+        /******/ 		// Create a new module (and put it into the cache)
+        /******/ 		var module = installedModules[moduleId] = {
+          /******/ 			i: moduleId,
+          /******/ 			l: false,
+          /******/ 			exports: {}
+          /******/ 		};
         /******/
+        /******/ 		// Execute the module function
+        /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
         /******/
-        /******/ 	// expose the modules object (__webpack_modules__)
-        /******/ 	__webpack_require__.m = modules;
+        /******/ 		// Flag the module as loaded
+        /******/ 		module.l = true;
         /******/
-        /******/ 	// expose the module cache
-        /******/ 	__webpack_require__.c = installedModules;
-        /******/
-        /******/ 	// define getter function for harmony exports
-        /******/ 	__webpack_require__.d = function(exports, name, getter) {
-            /******/ 		if(!__webpack_require__.o(exports, name)) {
-                /******/ 			Object.defineProperty(exports, name, {
-                    /******/ 				configurable: false,
-                    /******/ 				enumerable: true,
-                    /******/ 				get: getter
-                    /******/ 			});
-                /******/ 		}
-            /******/ 	};
-        /******/
-        /******/ 	// define __esModule on exports
-        /******/ 	__webpack_require__.r = function(exports) {
-            /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-            /******/ 	};
-        /******/
-        /******/ 	// getDefaultExport function for compatibility with non-harmony modules
-        /******/ 	__webpack_require__.n = function(module) {
-            /******/ 		var getter = module && module.__esModule ?
-                /******/ 			function getDefault() { return module['default']; } :
-                /******/ 			function getModuleExports() { return module; };
-            /******/ 		__webpack_require__.d(getter, 'a', getter);
-            /******/ 		return getter;
-            /******/ 	};
-        /******/
-        /******/ 	// Object.prototype.hasOwnProperty.call
-        /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-        /******/
-        /******/ 	// __webpack_public_path__
-        /******/ 	__webpack_require__.p = "";
-        /******/
-        /******/
-        /******/ 	// Load entry module and return exports
-        /******/ 	return __webpack_require__(__webpack_require__.s = "./src/n2h.js");
-        /******/ })
+        /******/ 		// Return the exports of the module
+        /******/ 		return module.exports;
+        /******/ 	}
+      /******/
+      /******/
+      /******/ 	// expose the modules object (__webpack_modules__)
+      /******/ 	__webpack_require__.m = modules;
+      /******/
+      /******/ 	// expose the module cache
+      /******/ 	__webpack_require__.c = installedModules;
+      /******/
+      /******/ 	// define getter function for harmony exports
+      /******/ 	__webpack_require__.d = function(exports, name, getter) {
+        /******/ 		if(!__webpack_require__.o(exports, name)) {
+          /******/ 			Object.defineProperty(exports, name, {
+            /******/ 				configurable: false,
+            /******/ 				enumerable: true,
+            /******/ 				get: getter
+            /******/ 			});
+          /******/ 		}
+        /******/ 	};
+      /******/
+      /******/ 	// define __esModule on exports
+      /******/ 	__webpack_require__.r = function(exports) {
+        /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+        /******/ 	};
+      /******/
+      /******/ 	// getDefaultExport function for compatibility with non-harmony modules
+      /******/ 	__webpack_require__.n = function(module) {
+        /******/ 		var getter = module && module.__esModule ?
+          /******/ 			function getDefault() { return module['default']; } :
+          /******/ 			function getModuleExports() { return module; };
+        /******/ 		__webpack_require__.d(getter, 'a', getter);
+        /******/ 		return getter;
+        /******/ 	};
+      /******/
+      /******/ 	// Object.prototype.hasOwnProperty.call
+      /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+      /******/
+      /******/ 	// __webpack_public_path__
+      /******/ 	__webpack_require__.p = "";
+      /******/
+      /******/
+      /******/ 	// Load entry module and return exports
+      /******/ 	return __webpack_require__(__webpack_require__.s = "./src/n2h.js");
+      /******/ })
     /************************************************************************/
     /******/ ({
 
-        /***/ "./src/asserts/hasOnlyChar.js":
-        /*!************************************!*\
-          !*** ./src/asserts/hasOnlyChar.js ***!
-          \************************************/
-        /*! no static exports found */
-        /***/ (function(module, exports) {
+      /***/ "./src/asserts/hasOnlyChar.js":
+      /*!************************************!*\
+        !*** ./src/asserts/hasOnlyChar.js ***!
+        \************************************/
+      /*! no static exports found */
+      /***/ (function(module, exports) {
 
-            eval("module.exports = function hasOnlyChar(char, block) {\r\n    return block\r\n        .split('')\r\n        .filter(function(item){return item!==char})\r\n        .length === 0;\r\n};\n\n//# sourceURL=webpack:///./src/asserts/hasOnlyChar.js?");
+        eval("module.exports = function hasOnlyChar(char, block) {\n    return block\n        .split('')\n        .filter(function(item){return item!==char})\n        .length === 0;\n};\n\n//# sourceURL=webpack:///./src/asserts/hasOnlyChar.js?");
 
-            /***/ }),
+        /***/ }),
 
-        /***/ "./src/locale/es/weightPeriodTranslator.js":
-        /*!*************************************************!*\
-          !*** ./src/locale/es/weightPeriodTranslator.js ***!
-          \*************************************************/
-        /*! no static exports found */
-        /***/ (function(module, exports) {
+      /***/ "./src/locale/es/weightPeriodTranslator.js":
+      /*!*************************************************!*\
+        !*** ./src/locale/es/weightPeriodTranslator.js ***!
+        \*************************************************/
+      /*! no static exports found */
+      /***/ (function(module, exports) {
 
-            eval("/**\r\n * Translates the weight of the period.\r\n *\r\n * @param weight\r\n * @returns {string}\r\n */\r\nmodule.exports = function weightPeriodTranslator(weight, isPlural) {\r\n        const periodTranslation = [\"\", \"mill\", \"bill\", \"trill\", \"cuatrill\", \"quintill\", \"sextill\", \"septill\", \"octill\", \"nonill\"];\r\n        const singularPrefix = \"ón\";\r\n        const pluralPrefix = \"ones\";\r\n        const hasOverflow = weight > periodTranslation.length -1;\r\n\r\n        let translatedWeightStr = \"notTranslated\";\r\n\r\n        if(!hasOverflow){\r\n            translatedWeightStr =  periodTranslation[weight]\r\n                .concat((isPlural === true)?pluralPrefix:singularPrefix)\r\n            ;\r\n        }\r\n        return translatedWeightStr;\r\n};\r\n\n\n//# sourceURL=webpack:///./src/locale/es/weightPeriodTranslator.js?");
+        eval("/**\n * Translates the weight of the period.\n *\n * @param weight\n * @returns {string}\n */\nmodule.exports = function weightPeriodTranslator(weight, isPlural) {\n        const periodTranslation = [\"\", \"mill\", \"bill\", \"trill\", \"cuatrill\", \"quintill\", \"sextill\", \"septill\", \"octill\", \"nonill\"];\n        const singularPrefix = \"ón\";\n        const pluralPrefix = \"ones\";\n        const hasOverflow = weight > periodTranslation.length -1;\n\n        let translatedWeightStr = \"notTranslated\";\n\n        if(!hasOverflow){\n            translatedWeightStr =  periodTranslation[weight]\n                .concat((isPlural === true)?pluralPrefix:singularPrefix)\n            ;\n        }\n        return translatedWeightStr;\n};\n\n\n//# sourceURL=webpack:///./src/locale/es/weightPeriodTranslator.js?");
 
-            /***/ }),
+        /***/ }),
 
-        /***/ "./src/n2h.js":
-        /*!********************!*\
-          !*** ./src/n2h.js ***!
-          \********************/
-        /*! no static exports found */
-        /***/ (function(module, exports, __webpack_require__) {
+      /***/ "./src/n2h.js":
+      /*!********************!*\
+        !*** ./src/n2h.js ***!
+        \********************/
+      /*! no static exports found */
+      /***/ (function(module, exports, __webpack_require__) {
 
-            eval("const periodTranslator = __webpack_require__(/*! ./periodTranslator.js */ \"./src/periodTranslator.js\");\r\n\r\n\r\nconsole.log('cargando n2h');\r\nfunction n2h(numberStr) {\r\n\r\n    const periodLenght = 6;\r\n    const initialWeight = 0;\r\n    let TranslatedStr = parseRecursively (numberStr, periodLenght, initialWeight, periodTranslator).trim();\r\n    return (TranslatedStr === \"\")?periodTranslator.numericInexistenceTranslation:TranslatedStr;\r\n}\r\n/**\r\n * https://es.wikipedia.org/wiki/Anexo:Nombres_de_los_n%C3%BAmeros_en_espa%C3%B1ol\r\n * https://wikimedia.org/api/rest_v1/media/math/render/svg/6e2fb44a6df602e5c9522edf731d3889cd6c208b\r\n * Nomenclatura standard de los blocks según la wikipedia.\r\n * si un block es una string que tiene un tamaño fijo de 6 caracteres es un period.\r\n * si un block es una string que tiene un tamaño fijo de 3 caracteres es una terna.\r\n * si un block es una string que tiene un tamaño fijo de 2 caracteres es una tupla.\r\n**/\r\nfunction parseRecursively(block, long, pesoAnterior, blockTranslator, weightTranslator) {\r\n    let miPeso = pesoAnterior;\r\n    let miBlock = block.slice(-1 * long);\r\n    let restante = block.slice(0, block.length - long);\r\n    let isTheLastBlock = isLastBlock(block, long);\r\n    //end recurse when\r\n    if (isTheLastBlock) {\r\n        return blockTranslator(miBlock, miPeso);\r\n    }\r\n    miPeso = pesoAnterior++;\r\n    return parseRecursively (restante, long, miPeso + 1, blockTranslator) + blockTranslator(miBlock,miPeso);\r\n}\r\n\r\nfunction isLastBlock(numberStr, long) {\r\n    return numberStr.length <= long;\r\n}\r\n\r\nmodule.exports = n2h;\r\n\n\n//# sourceURL=webpack:///./src/n2h.js?");
+        eval("const periodTranslator = __webpack_require__(/*! ./periodTranslator.js */ \"./src/periodTranslator.js\");\n\n\nfunction n2h(numberStr) {\n    const periodLenght = 6;\n    const initialWeight = 0;\n    let TranslatedStr = parseRecursively (numberStr, periodLenght, initialWeight, periodTranslator).trim();\n    return (TranslatedStr === \"\")?periodTranslator.numericInexistenceTranslation:TranslatedStr;\n}\n/**\n * https://es.wikipedia.org/wiki/Anexo:Nombres_de_los_n%C3%BAmeros_en_espa%C3%B1ol\n * https://wikimedia.org/api/rest_v1/media/math/render/svg/6e2fb44a6df602e5c9522edf731d3889cd6c208b\n * Nomenclatura standard de los blocks según la wikipedia.\n * si un block es una string que tiene un tamaño fijo de 6 caracteres es un period.\n * si un block es una string que tiene un tamaño fijo de 3 caracteres es una terna.\n * si un block es una string que tiene un tamaño fijo de 2 caracteres es una tupla.\n**/\nfunction parseRecursively(block, long, pesoAnterior, blockTranslator) {\n    let miPeso = pesoAnterior;\n    let miBlock = block.slice(-1 * long);\n    let restante = block.slice(0, block.length - long);\n    let isTheLastBlock = isLastBlock(block, long);\n    //end recurse when\n    if (isTheLastBlock) {\n        return blockTranslator(miBlock, miPeso);\n    }\n    miPeso = pesoAnterior++;\n    return parseRecursively (restante, long, miPeso + 1, blockTranslator) + blockTranslator(miBlock,miPeso);\n}\n\nfunction isLastBlock(numberStr, long) {\n    return numberStr.length <= long;\n}\n\nmodule.exports = n2h;\n\n\n//# sourceURL=webpack:///./src/n2h.js?");
 
-            /***/ }),
+        /***/ }),
 
-        /***/ "./src/periodTranslator.js":
-        /*!*********************************!*\
-          !*** ./src/periodTranslator.js ***!
-          \*********************************/
-        /*! no static exports found */
-        /***/ (function(module, exports, __webpack_require__) {
+      /***/ "./src/periodTranslator.js":
+      /*!*********************************!*\
+        !*** ./src/periodTranslator.js ***!
+        \*********************************/
+      /*! no static exports found */
+      /***/ (function(module, exports, __webpack_require__) {
 
-            eval("const fillString = __webpack_require__(/*! ./utils/fillString.js */ \"./src/utils/fillString.js\");\r\nconst terna2h = __webpack_require__(/*! ./ternaTranslator.js */ \"./src/ternaTranslator.js\");\r\nconst weightPeriodTranslator = __webpack_require__(/*! ./locale/es/weightPeriodTranslator.js */ \"./src/locale/es/weightPeriodTranslator.js\");\r\nconst hasOnlyChar = __webpack_require__(/*! ./asserts/hasOnlyChar */ \"./src/asserts/hasOnlyChar.js\");\r\n/**\r\n * Traduce un block a lenguaje humano en cualquier idioma conocido o inventado.\r\n *\r\n * un block , es una string que contiene caracteres numéricos únicamente.//todo:asserts y test.\r\n * vg->[000101] es un block que se compone de 2 ternas [{terna2}{terna1}]\r\n * @param block\r\n * @returns {string}\r\n */\r\nconst periodTranslator = function periodTranslator(block, weight) {\r\n    const millarSeparator = 'mil';\r\n\r\n\r\n    function normalizeBlock() {\r\n        //assert is not bigger than a period\r\n        if (block.length > 6) {\r\n            throw 'bloque demasiado largo';\r\n        }\r\n        //normalize AVOID bugs better than fix them.\r\n        if (block.length < 6) {\r\n            let fixedLenghtBlock = fillString(block, \"0\", 6);\r\n            block = fixedLenghtBlock;\r\n        }\r\n    }\r\n\r\n    normalizeBlock();//todo:extract in Utils and use in main ...\r\n    let isActiveTerna2 = true;\r\n    let isActiveMillar = true;\r\n\r\n    let imTheFirstPeriod = (weight === 0);\r\n\r\n    let resultStr = \"\";\r\n    let terna1 = block.slice(-3);\r\n    let terna2 = block.slice(0, 3);\r\n\r\n    let translatedTerna1 = \"\";\r\n    let translatedTerna2 = \"\";\r\n\r\n\r\n    const lastDigitOfTerna1 = terna1.slice(-1);\r\n\r\n    //not [000xxx] fix cero mil. y el segundo el 1001\r\n\r\n    translatedTerna2 = terna2h(terna2);\r\n    translatedTerna1 = terna2h(terna1);\r\n\r\n    function isEmpty(block) {\r\n        return hasOnlyChar(\"0\", block);\r\n    }\r\n\r\n    if (imTheFirstPeriod && isEmpty(block)) {\r\n        return translatedTerna1;\r\n    }\r\n    if (isEmpty(block)) {\r\n        return resultStr;\r\n    }\r\n\r\n\r\n    if (imTheFirstPeriod && lastDigitOfTerna1 === \"1\") {\r\n        translatedTerna1 = translatedTerna1.concat(\"o\");\r\n    }\r\n\r\n    if (isEmpty(terna2)) {\r\n        isActiveTerna2 = false;\r\n        isActiveMillar = false;\r\n    }\r\n    if (hasOnlyChar(\"0\", terna1)) {\r\n        translatedTerna1 = \"\";\r\n    }\r\n    //1001 exception\r\n    if (terna2 === '001') {\r\n        isActiveMillar = true;\r\n        isActiveTerna2 = false;\r\n    }\r\n\r\n    //Si el weightSeparator es plural o no nene, ¿un nonillón o dos nonillones?\r\n    const firstDigitOfBlock = block.slice(-1);\r\n\r\n    //plurals rule.\r\n    let isPluralWeight = true;\r\n    if (terna1=== \"001\" && isEmpty(terna2)) {\r\n        isPluralWeight = false;\r\n    }\r\n\r\n    //SrringBuilding... translatedTerna2 + millarSeparator + translatedTerna1;\r\n    if (isActiveTerna2) {\r\n        resultStr = resultStr\r\n            .concat(translatedTerna2)\r\n            .concat(\" \")\r\n        ;\r\n    }\r\n    if (isActiveMillar) {\r\n        resultStr = resultStr\r\n            .concat(millarSeparator)\r\n            .concat(!isEmpty(terna1)?\" \":\"\")\r\n        ;\r\n    }\r\n\r\n    resultStr = resultStr\r\n        .concat(translatedTerna1)\r\n        .concat(!imTheFirstPeriod ? \" \" : \"\")\r\n        .concat(!imTheFirstPeriod ? weightPeriodTranslator(weight, isPluralWeight)+\" \" : \"\")\r\n    return resultStr;\r\n};\r\n\r\nperiodTranslator.numericInexistenceTranslation = \"cero\";\r\nmodule.exports = periodTranslator;\r\n\n\n//# sourceURL=webpack:///./src/periodTranslator.js?");
+        eval("const fillString = __webpack_require__(/*! ./utils/fillString.js */ \"./src/utils/fillString.js\");\nconst terna2h = __webpack_require__(/*! ./ternaTranslator.js */ \"./src/ternaTranslator.js\");\nconst weightPeriodTranslator = __webpack_require__(/*! ./locale/es/weightPeriodTranslator.js */ \"./src/locale/es/weightPeriodTranslator.js\");\nconst hasOnlyChar = __webpack_require__(/*! ./asserts/hasOnlyChar */ \"./src/asserts/hasOnlyChar.js\");\n/**\n * Traduce un block a lenguaje humano en cualquier idioma conocido o inventado.\n *\n * un block , es una string que contiene caracteres numéricos únicamente.//todo:asserts y test.\n * vg->[000101] es un block que se compone de 2 ternas [{terna2}{terna1}]\n * @param block\n * @returns {string}\n */\nconst periodTranslator = function periodTranslator(block, weight) {\n    const millarSeparator = 'mil';\n\n\n    function normalizeBlock() {\n        //assert is not bigger than a period\n        if (block.length > 6) {\n            throw 'bloque demasiado largo';\n        }\n        //normalize AVOID bugs better than fix them.\n        if (block.length < 6) {\n            let fixedLenghtBlock = fillString(block, \"0\", 6);\n            block = fixedLenghtBlock;\n        }\n    }\n\n    normalizeBlock();//todo:extract in Utils and use in main ...\n    let isActiveTerna2 = true;\n    let isActiveMillar = true;\n\n    let imTheFirstPeriod = (weight === 0);\n\n    let resultStr = \"\";\n    let terna1 = block.slice(-3);\n    let terna2 = block.slice(0, 3);\n\n    let translatedTerna1 = \"\";\n    let translatedTerna2 = \"\";\n\n\n    const lastDigitOfTerna1 = terna1.slice(-1);\n\n    //not [000xxx] fix cero mil. y el segundo el 1001\n\n    translatedTerna2 = terna2h(terna2);\n    translatedTerna1 = terna2h(terna1);\n\n    function isEmpty(block) {\n        return hasOnlyChar(\"0\", block);\n    }\n\n    if (imTheFirstPeriod && isEmpty(block)) {\n        return translatedTerna1;\n    }\n    if (isEmpty(block)) {\n        return resultStr;\n    }\n\n\n    if (imTheFirstPeriod && lastDigitOfTerna1 === \"1\") {\n        translatedTerna1 = translatedTerna1.concat(\"o\");\n    }\n\n    if (isEmpty(terna2)) {\n        isActiveTerna2 = false;\n        isActiveMillar = false;\n    }\n    if (hasOnlyChar(\"0\", terna1)) {\n        translatedTerna1 = \"\";\n    }\n    //1001 exception\n    if (terna2 === '001') {\n        isActiveMillar = true;\n        isActiveTerna2 = false;\n    }\n\n    //Si el weightSeparator es plural o no nene, ¿un nonillón o dos nonillones?\n    const firstDigitOfBlock = block.slice(-1);\n\n    //plurals rule.\n    let isPluralWeight = true;\n    if (terna1=== \"001\" && isEmpty(terna2)) {\n        isPluralWeight = false;\n    }\n\n    //SrringBuilding... translatedTerna2 + millarSeparator + translatedTerna1;\n    if (isActiveTerna2) {\n        resultStr = resultStr\n            .concat(translatedTerna2)\n            .concat(\" \")\n        ;\n    }\n    if (isActiveMillar) {\n        resultStr = resultStr\n            .concat(millarSeparator)\n            .concat(!isEmpty(terna1)?\" \":\"\")\n        ;\n    }\n\n    resultStr = resultStr\n        .concat(translatedTerna1)\n        .concat(!imTheFirstPeriod ? \" \" : \"\")\n        .concat(!imTheFirstPeriod ? weightPeriodTranslator(weight, isPluralWeight)+\" \" : \"\")\n    return resultStr;\n};\n\nperiodTranslator.numericInexistenceTranslation = \"cero\";\nmodule.exports = periodTranslator;\n\n\n//# sourceURL=webpack:///./src/periodTranslator.js?");
 
-            /***/ }),
+        /***/ }),
 
-        /***/ "./src/ternaTranslator.js":
-        /*!********************************!*\
-          !*** ./src/ternaTranslator.js ***!
-          \********************************/
-        /*! no static exports found */
-        /***/ (function(module, exports, __webpack_require__) {
+      /***/ "./src/ternaTranslator.js":
+      /*!********************************!*\
+        !*** ./src/ternaTranslator.js ***!
+        \********************************/
+      /*! no static exports found */
+      /***/ (function(module, exports, __webpack_require__) {
 
-            eval("/**\r\n * https://es.wikipedia.org/wiki/Anexo:Nombres_de_los_n%C3%BAmeros_en_espa%C3%B1ol\r\n * Una terna es un chunk de 3 caracteres numéricos, formado por una tupla y las centenas.\r\n * no es superior a novecientos noventa y nueve 999 y no es inferior a 000.\r\n * @param terna\r\n */\r\nconst fillString = __webpack_require__(/*! ./utils/fillString.js */ \"./src/utils/fillString.js\");\r\n\r\nfunction ternaTranslator(terna) {\r\n    const normalizedTerna = fillString(terna, \"0\",3);\r\n    let HumanString = \"\";\r\n    const pesoIndex = normalizedTerna.slice(0,1);\r\n    const tuplaIndex = normalizedTerna.slice(1,3);\r\n\r\n    if (pesoIndex === \"0\"){\r\n        return  blockTranslatorTupla(tuplaIndex);\r\n    }\r\n    const HumanCentenas = weightTranslator(Number(pesoIndex));\r\n    const HumanTupla = blockTranslatorTupla(Number(tuplaIndex));\r\n\r\n    if (pesoIndex >= 1) {\r\n        HumanString = HumanCentenas + ' ' + HumanTupla;\r\n}\r\n\r\n\r\n    //100\r\n    if (Number(pesoIndex) === 1 && tuplaIndex === \"00\") {\r\n        HumanString =  blockTranslatorTupla(Number(terna));\r\n    }\r\n    return HumanString;\r\n}\r\n\r\nfunction  blockTranslatorTupla(tupla) {\r\n    const tuplasRaw = [\r\n        \"\",\r\n        \"un\",//la o es la excepción\r\n        \"dos\",\r\n        \"tres\",\r\n        \"cuatro\",\r\n        \"cinco\",\r\n        \"seis\",\r\n        \"siete\",\r\n        \"ocho\",\r\n        \"nueve\",\r\n        \"diez\",\r\n        \"once\",\r\n        \"doce\",\r\n        \"trece\",\r\n        \"catorce\",\r\n        \"quince\",\r\n        \"dieciséis\",\r\n        \"diecisiete\",\r\n        \"dieciocho\",\r\n        \"diecinueve\",\r\n        \"veinte\",\r\n        \"veintiuno\", //o veintiuna\r\n        \"veintidós\",\r\n        \"veintitrés\",\r\n        \"veinticuatro\",\r\n        \"veinticinco\",\r\n        \"veintiséis\",\r\n        \"veintisiete\",\r\n        \"veintiocho\",\r\n        \"veintinueve\",\r\n        \"treinta\",\r\n        \"treinta y un\",\r\n        \"treinta y dos\",\r\n        \"treinta y tres\",\r\n        \"treinta y cuatro\",\r\n        \"treinta y cinco\",\r\n        \"treinta y seis\",\r\n        \"treinta y siete\",\r\n        \"treinta y ocho\",\r\n        \"treinta y nueve\",\r\n        \"cuarenta\",\r\n        \"cuarenta y un\",\r\n        \"cuarenta y dos\",\r\n        \"cuarenta y tres\",\r\n        \"cuarenta y cuatro\",\r\n        \"cuarenta y cinco\",\r\n        \"cuarenta y seis\",\r\n        \"cuarenta y siete\",\r\n        \"cuarenta y ocho\",\r\n        \"cuarenta y nueve\",\r\n        \"cincuenta\",\r\n        \"cincuenta y un\",// cincuenta y una\tDelante de un sustantivo: «cincuenta y un» o «cincuenta y una».\r\n        \"cincuenta y dos\",\r\n        \"cincuenta y tres\",\r\n        \"cincuenta y cuatro\",\r\n        \"cincuenta y cinco\",\r\n        \"cincuenta y seis\",\r\n        \"cincuenta y siete\",\r\n        \"cincuenta y ocho\",\r\n        \"cincuenta y nueve\",\r\n        \"sesenta\",\r\n        \"sesenta y un\",\r\n        \"sesenta y dos\",\r\n        \"sesenta y tres\",\r\n        \"sesenta y cuatro\",\r\n        \"sesenta y cinco\",\r\n        \"sesenta y seis\",\r\n        \"sesenta y siete\",\r\n        \"sesenta y ocho\",\r\n        \"sesenta y nueve\",\r\n        \"setenta\",\r\n        \"setenta y un\",\r\n        \"setenta y dos\",\r\n        \"setenta y tres\",\r\n        \"setenta y cuatro\",\r\n        \"setenta y cinco\",\r\n        \"setenta y seis\",\r\n        \"setenta y siete\",\r\n        \"setenta y ocho\",\r\n        \"setenta y nueve\",\r\n        \"ochenta\",\r\n        \"ochenta y un\", //a\r\n        \"ochenta y dos\",\r\n        \"ochenta y tres\",\r\n        \"ochenta y cuatro\",\r\n        \"ochenta y cinco\",\r\n        \"ochenta y seis\",\r\n        \"ochenta y siete\",\r\n        \"ochenta y ocho\",\r\n        \"ochenta y nueve\",\r\n        \"noventa\",\r\n        \"noventa y un\",// noventa y una\tDelante de un sustantivo: «noventa y un» o «noventa y una».\r\n        \"noventa y dos\",\r\n        \"noventa y tres\",\r\n        \"noventa y cuatro\",\r\n        \"noventa y cinco\",\r\n        \"noventa y seis\",\r\n        \"noventa y siete\",\r\n        \"noventa y ocho\",\r\n        \"noventa y nueve\",\r\n        \"cien\"\r\n    ];\r\n    return tuplasRaw[Number(tupla)];\r\n}\r\nfunction weightTranslator(index){\r\n    let centenas = \"\";\r\n   const pesoCentenas = [\r\n       \"\",//0\r\n       \"ciento\",\r\n       \"doscientos\",\r\n       \"trescientos\",\r\n       \"cuatrocientos\",\r\n       \"quinientos\",\r\n       \"seiscientos\",\r\n       \"setecientos\",\r\n       \"ochocientos\",\r\n       \"novecientos\"\r\n   ];\r\n   centenas =  pesoCentenas[index];\r\n   return centenas;\r\n}\r\nmodule.exports = ternaTranslator;\n\n//# sourceURL=webpack:///./src/ternaTranslator.js?");
+        eval("/**\n * https://es.wikipedia.org/wiki/Anexo:Nombres_de_los_n%C3%BAmeros_en_espa%C3%B1ol\n * Una terna es un chunk de 3 caracteres numéricos, formado por una tupla y las centenas.\n * no es superior a novecientos noventa y nueve 999 y no es inferior a 000.\n * @param terna\n */\nconst fillString = __webpack_require__(/*! ./utils/fillString.js */ \"./src/utils/fillString.js\");\n\nfunction ternaTranslator(terna) {\n    const normalizedTerna = fillString(terna, \"0\",3);\n    let HumanString = \"\";\n    const pesoIndex = normalizedTerna.slice(0,1);\n    const tuplaIndex = normalizedTerna.slice(1,3);\n\n    if (pesoIndex === \"0\"){\n        return  blockTranslatorTupla(tuplaIndex);\n    }\n    const HumanCentenas = weightTranslator(Number(pesoIndex));\n    const HumanTupla = blockTranslatorTupla(Number(tuplaIndex));\n\n    if (pesoIndex >= 1) {\n        HumanString = HumanCentenas + ' ' + HumanTupla;\n}\n\n\n    //100\n    if (Number(pesoIndex) === 1 && tuplaIndex === \"00\") {\n        HumanString =  blockTranslatorTupla(Number(terna));\n    }\n    return HumanString;\n}\n\nfunction  blockTranslatorTupla(tupla) {\n    const tuplasRaw = [\n        \"\",\n        \"un\",//la o es la excepción\n        \"dos\",\n        \"tres\",\n        \"cuatro\",\n        \"cinco\",\n        \"seis\",\n        \"siete\",\n        \"ocho\",\n        \"nueve\",\n        \"diez\",\n        \"once\",\n        \"doce\",\n        \"trece\",\n        \"catorce\",\n        \"quince\",\n        \"dieciséis\",\n        \"diecisiete\",\n        \"dieciocho\",\n        \"diecinueve\",\n        \"veinte\",\n        \"veintiuno\", //o veintiuna\n        \"veintidós\",\n        \"veintitrés\",\n        \"veinticuatro\",\n        \"veinticinco\",\n        \"veintiséis\",\n        \"veintisiete\",\n        \"veintiocho\",\n        \"veintinueve\",\n        \"treinta\",\n        \"treinta y un\",\n        \"treinta y dos\",\n        \"treinta y tres\",\n        \"treinta y cuatro\",\n        \"treinta y cinco\",\n        \"treinta y seis\",\n        \"treinta y siete\",\n        \"treinta y ocho\",\n        \"treinta y nueve\",\n        \"cuarenta\",\n        \"cuarenta y un\",\n        \"cuarenta y dos\",\n        \"cuarenta y tres\",\n        \"cuarenta y cuatro\",\n        \"cuarenta y cinco\",\n        \"cuarenta y seis\",\n        \"cuarenta y siete\",\n        \"cuarenta y ocho\",\n        \"cuarenta y nueve\",\n        \"cincuenta\",\n        \"cincuenta y un\",// cincuenta y una\tDelante de un sustantivo: «cincuenta y un» o «cincuenta y una».\n        \"cincuenta y dos\",\n        \"cincuenta y tres\",\n        \"cincuenta y cuatro\",\n        \"cincuenta y cinco\",\n        \"cincuenta y seis\",\n        \"cincuenta y siete\",\n        \"cincuenta y ocho\",\n        \"cincuenta y nueve\",\n        \"sesenta\",\n        \"sesenta y un\",\n        \"sesenta y dos\",\n        \"sesenta y tres\",\n        \"sesenta y cuatro\",\n        \"sesenta y cinco\",\n        \"sesenta y seis\",\n        \"sesenta y siete\",\n        \"sesenta y ocho\",\n        \"sesenta y nueve\",\n        \"setenta\",\n        \"setenta y un\",\n        \"setenta y dos\",\n        \"setenta y tres\",\n        \"setenta y cuatro\",\n        \"setenta y cinco\",\n        \"setenta y seis\",\n        \"setenta y siete\",\n        \"setenta y ocho\",\n        \"setenta y nueve\",\n        \"ochenta\",\n        \"ochenta y un\", //a\n        \"ochenta y dos\",\n        \"ochenta y tres\",\n        \"ochenta y cuatro\",\n        \"ochenta y cinco\",\n        \"ochenta y seis\",\n        \"ochenta y siete\",\n        \"ochenta y ocho\",\n        \"ochenta y nueve\",\n        \"noventa\",\n        \"noventa y un\",// noventa y una\tDelante de un sustantivo: «noventa y un» o «noventa y una».\n        \"noventa y dos\",\n        \"noventa y tres\",\n        \"noventa y cuatro\",\n        \"noventa y cinco\",\n        \"noventa y seis\",\n        \"noventa y siete\",\n        \"noventa y ocho\",\n        \"noventa y nueve\",\n        \"cien\"\n    ];\n    return tuplasRaw[Number(tupla)];\n}\nfunction weightTranslator(index){\n    let centenas = \"\";\n   const pesoCentenas = [\n       \"\",//0\n       \"ciento\",\n       \"doscientos\",\n       \"trescientos\",\n       \"cuatrocientos\",\n       \"quinientos\",\n       \"seiscientos\",\n       \"setecientos\",\n       \"ochocientos\",\n       \"novecientos\"\n   ];\n   centenas =  pesoCentenas[index];\n   return centenas;\n}\nmodule.exports = ternaTranslator;\n\n//# sourceURL=webpack:///./src/ternaTranslator.js?");
 
-            /***/ }),
+        /***/ }),
 
-        /***/ "./src/utils/fillString.js":
-        /*!*********************************!*\
-          !*** ./src/utils/fillString.js ***!
-          \*********************************/
-        /*! no static exports found */
-        /***/ (function(module, exports) {
+      /***/ "./src/utils/fillString.js":
+      /*!*********************************!*\
+        !*** ./src/utils/fillString.js ***!
+        \*********************************/
+      /*! no static exports found */
+      /***/ (function(module, exports) {
 
-            eval("module.exports = function fillString(str, char2fill, fixedLenght) {\r\n\r\n    let strResult = str;\r\n\r\n    if (str.length < fixedLenght) {\r\n        let cachoQueFaltaLenght = fixedLenght - str.length;\r\n\r\n        let cachoQueFalta = \"\";\r\n        for (let i = 0; i < cachoQueFaltaLenght; i++) {\r\n            cachoQueFalta = cachoQueFalta.concat(char2fill);\r\n        }\r\n        strResult = cachoQueFalta.concat(str);\r\n    }\r\n    return strResult;\r\n};\n\n//# sourceURL=webpack:///./src/utils/fillString.js?");
+        eval("module.exports = function fillString(str, char2fill, fixedLenght) {\n\n    let strResult = str;\n\n    if (str.length < fixedLenght) {\n        let cachoQueFaltaLenght = fixedLenght - str.length;\n\n        let cachoQueFalta = \"\";\n        for (let i = 0; i < cachoQueFaltaLenght; i++) {\n            cachoQueFalta = cachoQueFalta.concat(char2fill);\n        }\n        strResult = cachoQueFalta.concat(str);\n    }\n    return strResult;\n};\n\n//# sourceURL=webpack:///./src/utils/fillString.js?");
 
-            /***/ })
+        /***/ })
 
-        /******/ });
-    var boton = document.getElementById("boton");
+      /******/ });
+
     var input = document.getElementById("input");
     var output = document.getElementById("output");
 
-    boton.onclick = function (e) {
-       console.log('boton clicked', e.target);
-        output.textContent = input.value;
-        output.textContent = n2h(input.value);
-    };
-    input.onchange = function (e) {
-        console.log('input changed', e.target);
-        output.textContent = n2h(input.value);
-    };
+    function recalcula() {
+      console.log('realculando');//TODO: borrame.
+
+      output.textContent = n2h(input.value);
+      // output.textContent = input.value;
+
+    }
+
+    window.onkeyup = recalcula;
+    input.onchange =  recalcula;
 
     console.log('input: ' , input);
     console.log('output: ' , output);
-    console.log('boton: ' , boton);
 </script>
 
 </body>

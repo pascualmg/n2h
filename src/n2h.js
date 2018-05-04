@@ -2,7 +2,6 @@ const periodTranslator = require('./periodTranslator.js');
 
 
 function n2h(numberStr) {
-
     const periodLenght = 6;
     const initialWeight = 0;
     let TranslatedStr = parseRecursively (numberStr, periodLenght, initialWeight, periodTranslator).trim();
