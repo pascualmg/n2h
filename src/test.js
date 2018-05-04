@@ -4,7 +4,7 @@ function Persona(sexo) {
 
 Persona.prototype = {
   saluda: function Saludar() {
-    console.log('hola me llamo ' + this.nombre + 'y soy ' + this.sexo);
+    console.log('hola me llamo ' + this.nombre + ' y soy ' + this.sexo);
   }
 };
 
@@ -13,15 +13,11 @@ function Hombre(nombre) {
   this.nombre = nombre;
 }
 
-Hombre.prototype = Persona.prototype;
-Hombre.constructor = Hombre;
-
-
+//extends...
+Hombre.prototype = Object.create(Persona.prototype);
 
 var levita = new Hombre('andres');
 
-
-var passh = new Hombre('passh');
-
 levita.saluda();
-passh.saluda();
+
+
