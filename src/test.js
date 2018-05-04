@@ -1,19 +1,25 @@
-var foo = function Persona(nombre, edad) {
+function Persona(nombre, edad) {
   this.nombre = nombre;
-  this.edad=edad;
+  this.edad = edad;
+
 };
 
 Persona.prototype = {
-  saluda:function Saludar() {
+  saluda: function Saludar() {
     console.log('hola me llamo' + this.nombre + 'y tengo ' + this.edad + ' años');
   }
 };
 
-var bar = new foo('andres', '100');
-var baz = new foo('passh', '99');
+var levita = new Persona('andres', '100');
+var passh = new Persona('passh', '99');
+
+
+var Levitoide = Object.create(levita);
+var passhoide = Object.create(passh);
 
 
 
+Levitoide.saluda();
 
-bar.saluda();
-baz.saluda();
+
+
