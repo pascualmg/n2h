@@ -5,7 +5,45 @@
  * @returns {string}
  */
 module.exports = function weightPeriodTranslator(weight, isPlural) {
-        const periodTranslation = ["", "mill", "bill", "trill", "cuatrill", "quintill", "sextill", "septill", "octill", "nonill"];
+
+        const regulars = [
+            "un",
+            "duo",
+            "tri",
+            "cua",
+            "quin",
+            "sex",
+            "sep",
+            "oct",
+            "non",
+            "dec",
+        ];
+
+        const periodTranslation = [
+            "",
+            "mill",
+            "bill",
+            "trill",
+            "cuatrill",
+            "quintill",
+            "sextill",
+            "septill",
+            "octill",
+            "nonill",
+            "decill",
+            "undecill",
+            "duodecill",
+            "tridecill",
+            "tetradecill",
+            "pentadecill",
+            "sextadecill",
+            "septadecill",
+            "octadecill",
+            "nonidecill",
+            "vigentill",
+            "unvigentill",
+            "duovigentill",
+        ];
         const singularPrefix = "ón";
         const pluralPrefix = "ones";
         const hasOverflow = weight > periodTranslation.length -1;
