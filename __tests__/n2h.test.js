@@ -46,7 +46,7 @@ describe('n2h works fine with numbers withe less than one period', function () {
     test('cien mil', function () {
         expect(n2h('100000')).toBe('cien mil');
     });
-  test('trescientos cinco', function () {
+    test('trescientos cinco', function () {
     expect(n2h('305')).toBe('trescientos cinco');
   });
     test('diez mil', function () {
@@ -55,7 +55,7 @@ describe('n2h works fine with numbers withe less than one period', function () {
     test('un millón un billón', function () {
         expect(n2h('1000001000000')).toBe('un billón un millón');
     });
-     test('hago bien un nonillón', function () {
+    test('hago bien un nonillón', function () {
         expect(n2h('1000000000000000000000000000000000000000000000000000000')).toBe('un nonillón');
     });
 });
