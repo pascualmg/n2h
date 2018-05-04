@@ -8,21 +8,20 @@ Persona.prototype = {
   }
 };
 
-
 function Hombre(nombre) {
-  Persona.call(this, 'varon');
+  Persona.call(this, 'macho cabezon');
   this.nombre = nombre;
 }
 
-Hombre.prototype = Object.create(Persona.prototype);
-//Hombre.prototype.constructor = Hombre;
-//Hombre.prototype = Persona.prototype;
+Hombre.prototype = Persona.prototype;
+Hombre.constructor = Hombre;
+
 
 
 var levita = new Hombre('andres');
 
-console.log('levita.sexo',levita.sexo );//TODO: borrame.
 
-
+var passh = new Hombre('passh');
 
 levita.saluda();
+passh.saluda();
