@@ -17,6 +17,7 @@ function n2h(numberStr) {
 **/
 function parseRecursively(block, long, pesoAnterior, blockTranslator) {
     let miPeso = pesoAnterior;
+
     let miBlock = block.slice(-1 * long);
     let restante = block.slice(0, block.length - long);
     let isTheLastBlock = isLastBlock(block, long);
@@ -31,5 +32,8 @@ function parseRecursively(block, long, pesoAnterior, blockTranslator) {
 function isLastBlock(numberStr, long) {
     return numberStr.length <= long;
 }
+
+var b = (a) => {return a};
+
 
 module.exports = n2h;
